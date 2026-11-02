@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chana Pharma &amp; Care</title>
+<style>
+  body{margin:0;min-height:100vh;display:grid;place-items:center;font-family:system-ui,-apple-system,sans-serif;color:#1F3C8F;background:linear-gradient(160deg,#FDF8F1 0%,#F6EADB 52%,#EDDBC4 100%)}
+  p{font-size:15px}
+</style>
+</head>
+<body>
+<p id="msg">กำลังโหลด…</p>
+<script>
+(function () {
+  var API = 'https://script.google.com/macros/s/AKfycbzzndxoJZ_xLnrggjkDYTCEkNeNO9BSR7xH2BnsXmgPHiQ3lIrtnL1JpWDAwVMG3DnhCQ/exec';
+  var staff = /[?&]v=staff(&|$)/.test(location.search);
+  fetch(API + '?page=1' + (staff ? '&v=staff' : ''))
+    .then(function (r) { if (!r.ok) throw new Error(); return r.text(); })
+    .then(function (html) { document.open(); document.write(html); document.close(); })
+    .catch(function () { document.getElementById('msg').textContent = 'โหลดไม่สำเร็จ ลองรีเฟรชอีกครั้ง'; });
+})();
+</script>
+</body>
+</html>
