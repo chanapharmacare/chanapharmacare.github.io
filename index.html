@@ -15,7 +15,9 @@
   .spark.s1{left:8px;top:18px}
   .spark.s2{right:6px;top:8px;width:8px;height:8px;background:#F58A3A;animation-delay:.5s}
   .spark.s3{right:14px;top:56px;width:6px;height:6px;background:#E8559A;animation-delay:1s}
-  .msg{margin:0;font-size:15px;font-weight:600;letter-spacing:.01em}
+  .msg{margin:0;font-size:15px;font-weight:600;letter-spacing:.01em;display:flex;align-items:center;gap:6px}
+  .smile{width:24px;height:24px;flex:none;animation:wink 2.2s ease-in-out infinite}
+  @keyframes wink{0%,70%,100%{transform:rotate(0) scale(1)}80%{transform:rotate(-12deg) scale(1.12)}90%{transform:rotate(8deg) scale(1.05)}}
   .dots{display:flex;gap:6px}
   .dots i{width:7px;height:7px;border-radius:50%;background:#2FB5F5;animation:blink 1.2s ease-in-out infinite}
   .dots i:nth-child(2){animation-delay:.2s;background:#E8559A}
@@ -25,7 +27,7 @@
   @keyframes squish{0%,100%{transform:scaleX(1);opacity:1}50%{transform:scaleX(.55);opacity:.45}}
   @keyframes twinkle{0%,100%{opacity:0;transform:scale(.4)}50%{opacity:1;transform:scale(1)}}
   @keyframes blink{0%,100%{opacity:.25;transform:translateY(0)}40%{opacity:1;transform:translateY(-4px)}}
-  @media (prefers-reduced-motion:reduce){.pill,.pill svg,.shadow,.spark,.dots i{animation:none}.pill svg{transform:rotate(-30deg)}.spark{opacity:1}}
+  @media (prefers-reduced-motion:reduce){.pill,.pill svg,.shadow,.spark,.dots i,.smile{animation:none}.pill svg{transform:rotate(-30deg)}.spark{opacity:1}}
 </style>
 </head>
 <body>
@@ -47,7 +49,7 @@
     </div>
     <div class="shadow"></div>
   </div>
-  <p class="msg" id="msg">ยินดีต้อนรับ 😄</p>
+  <p class="msg" id="msg">ยินดีต้อนรับ <svg class="smile" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="sg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F772AE"/><stop offset="1" stop-color="#FFA24C"/></linearGradient></defs><circle cx="12" cy="12" r="11" fill="url(#sg)"/><path d="M7 10.2q1.5-1.8 3 0M14 10.2q1.5-1.8 3 0" fill="none" stroke="#1F3C8F" stroke-width="1.9" stroke-linecap="round"/><path d="M7.6 13.4q4.4 5.2 8.8 0z" fill="#1F3C8F"/><path d="M10.2 15.6q1.8 1 3.6 0" fill="none" stroke="#FF6FA8" stroke-width="1.3" stroke-linecap="round"/><circle cx="6.2" cy="13.4" r="1.4" fill="#fff" fill-opacity=".5"/><circle cx="17.8" cy="13.4" r="1.4" fill="#fff" fill-opacity=".5"/></svg></p>
   <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
 </div>
 <script>
