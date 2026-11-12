@@ -16,8 +16,8 @@
   .spark.s2{right:6px;top:8px;width:8px;height:8px;background:#F58A3A;animation-delay:.5s}
   .spark.s3{right:14px;top:56px;width:6px;height:6px;background:#E8559A;animation-delay:1s}
   .msg{margin:0;font-size:15px;font-weight:600;letter-spacing:.01em;display:flex;align-items:center;gap:6px}
-  .smile{width:24px;height:24px;flex:none;animation:wink 2.2s ease-in-out infinite}
-  @keyframes wink{0%,70%,100%{transform:rotate(0) scale(1)}80%{transform:rotate(-12deg) scale(1.12)}90%{transform:rotate(8deg) scale(1.05)}}
+  .smile{width:24px;height:24px;flex:none;transform-origin:50% 60%;animation:wink 1.8s ease-in-out infinite}
+  @keyframes wink{0%,100%{transform:translateY(0) rotate(-7deg)}25%{transform:translateY(-2px) rotate(0) scale(1.05)}50%{transform:translateY(0) rotate(7deg)}75%{transform:translateY(-2px) rotate(0) scale(1.05)}}
   .dots{display:flex;gap:6px}
   .dots i{width:7px;height:7px;border-radius:50%;background:#2FB5F5;animation:blink 1.2s ease-in-out infinite}
   .dots i:nth-child(2){animation-delay:.2s;background:#E8559A}
